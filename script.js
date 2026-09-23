@@ -5,7 +5,7 @@
 
 /* ── Typewriter Effect ── */
 const roles = [
-  'Server Engineer',
+  'DevOps Engineer',
   'Technician Support',
   'Infrastructure Architect',
   'Database Administrator',

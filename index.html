@@ -15,7 +15,8 @@
 
     <!-- ── SIDEBAR ── -->
     <aside class="sidebar">
-      <div class="sidebar-top">
+      <!-- Ditambahkan style flex dan align-items center agar foto profil tepat di tengah -->
+      <div class="sidebar-top" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div class="avatar-ring">
           <img src="foto.jpg" alt="Foto Brian Dista" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
         </div>
@@ -158,10 +159,7 @@
             </div>
           </div>
 
-          <!-- Project Grid Container -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-          
-          <!-- Project Card 1: CI/CD -->
+          <!-- Project Card 2: TrueNAS Core -->
           <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.5)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <h3 style="margin: 0; color: #63b3ed; font-size: 1.25rem;">Penyimpanan Data Tersentral Menggunakan TrueNAS Core</h3>
             <p style="margin: 0; font-size: 0.95rem; color: #a0aec0; line-height: 1.6;">
@@ -174,7 +172,6 @@
               </a>
             </div>
           </div>
-          <!-- Project Card 3: belum sempet upload -->
 
         </div>
       </div>

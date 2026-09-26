@@ -15,7 +15,7 @@
 
     <!-- ── SIDEBAR ── -->
     <aside class="sidebar">
-      <div class="sidebar-top">
+      <div class="sidebar-top" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div class="avatar-ring">
           <img src="foto.jpg" alt="Foto Brian Dista" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
         </div>
@@ -62,12 +62,10 @@
 
     <!-- ── MAIN CONTENT (HOME) ── -->
     <main class="main content-section" id="home">
-      <!-- Background decorations -->
       <div class="bg-grid" aria-hidden="true"></div>
       <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
       <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
 
-      <!-- Hero content -->
       <section class="hero">
         <p class="hero-label">— Portofolio</p>
 
@@ -93,7 +91,6 @@
         </div>
       </section>
 
-      <!-- Stats bar (bottom) -->
       <div class="stats-row" aria-label="Statistics">
         <div class="stat-item">
           <p class="stat-num">5<span class="stat-plus">+</span></p>
@@ -135,46 +132,75 @@
       </div>
     </main>
 
-    <!-- ── PROJECT SECTION ── -->
+    <!-- ── PROJECT SECTION (VERTICAL LIST) ── -->
     <main class="main content-section" id="project" style="display: none;">
       <div class="about-container">
         <h2>Portofolio Project</h2>
         <p class="about-lead">Daftar implementasi arsitektur infrastruktur, otomatisasi deployment, dan manajemen server.</p>
 
-        <!-- Project Grid Container -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <!-- Container list vertikal ke bawah -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
           
           <!-- Project Card 1: CI/CD -->
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.5)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
+          <div onclick="window.open('assets/project-1-ci-cd.pdf', '_blank')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.8)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <h3 style="margin: 0; color: #63b3ed; font-size: 1.25rem;">Fully Automated CI/CD & Staging Infrastructure</h3>
             <p style="margin: 0; font-size: 0.95rem; color: #a0aec0; line-height: 1.6;">
               Membangun arsitektur deployment otomatis end-to-end menggunakan GitLab CI/CD, routing dinamis dengan Traefik, dan manajemen kontainer terpusat. Dilengkapi implementasi Harbor Registry offline (air-gapped deployment).
             </p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a class="btn btn--primary" href="assets/project-1-ci-cd.pdf" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1rem;">
+            <div>
+              <span class="btn btn--primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1rem; pointer-events: none;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 Lihat Dokumen PDF
-              </a>
+              </span>
             </div>
           </div>
 
-          <!-- Project Grid Container -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-          
-          <!-- Project Card 1: CI/CD -->
-          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.5)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
+          <!-- Project Card 2: TrueNAS Core -->
+          <div onclick="window.open('assets/project-2-data-center.pdf', '_blank')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.8)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <h3 style="margin: 0; color: #63b3ed; font-size: 1.25rem;">Penyimpanan Data Tersentral Menggunakan TrueNAS Core</h3>
             <p style="margin: 0; font-size: 0.95rem; color: #a0aec0; line-height: 1.6;">
               Membuat Server NAS (Network Attached Storage) menggunakan TrueNAS Core untuk penyimpanan data terpusat, dengan konfigurasi RAID-Z2 untuk keamanan data dan akses berbasis jaringan.
             </p>
-            <div style="margin-top: auto; padding-top: 1rem;">
-              <a class="btn btn--primary" href="assets/project-2-data-center.pdf" target="_blank" rel="noopener" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1rem;">
+            <div>
+              <span class="btn btn--primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1rem; pointer-events: none;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 Lihat Dokumen PDF
-              </a>
+              </span>
             </div>
           </div>
-          <!-- Project Card 3: belum sempet upload -->
+
+          <!-- Project Card 3: Monitoring Server -->
+          <div onclick="window.open('assets/project-3-monitoring-server.pdf', '_blank')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.8)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
+            <h3 style="margin: 0; color: #63b3ed; font-size: 1.25rem;">Monitoring Server & Infrastruktur Jaringan</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #a0aec0; line-height: 1.6;">
+              Implementasi sistem pemantauan performa server dan ketersediaan layanan secara real-time untuk memastikan tingkat keandalan dan meminimalkan potensi downtime operasional.
+            </p>
+            <div>
+              <span class="btn btn--primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1rem; pointer-events: none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Lihat Dokumen PDF
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Card 4: Kelola PDF -->
+          <div onclick="window.open('assets/project-4-kelola-pdf.pdf', '_blank')" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='rgba(99, 179, 237, 0.8)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
+            <h3 style="margin: 0; color: #63b3ed; font-size: 1.25rem;">Automated Document Processing & Management</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #a0aec0; line-height: 1.6;">
+              Pengembangan dan integrasi sistem pengelolaan dokumen digital otomatis berbasis web untuk mendukung efisiensi alur kerja administratif internal perusahaan.
+            </p>
+            <div>
+              <span class="btn btn--primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.6rem 1rem; pointer-events: none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Lihat Dokumen PDF
+              </span>
+            </div>
+          </div>
+
+          <!-- Keterangan project lain dalam proses upload -->
+          <p style="text-align: center; margin-top: 1.5rem; font-size: 14.5px; color: #888; font-style: italic;">
+            * Project lain dalam proses upload...
+          </p>
 
         </div>
       </div>
@@ -186,10 +212,8 @@
         <h2>Hubungi Saya</h2>
         <p class="about-lead">Tertarik untuk berkolaborasi, berdiskusi mengenai infrastruktur server, atau memiliki peluang karir? Jangan ragu untuk menjangkau saya melalui platform di bawah ini.</p>
 
-        <!-- Contact Grid Container -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2rem;">
           
-          <!-- Email -->
           <a href="mailto:briandista024@gmail.com" target="_blank" rel="noopener" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: #e2e8f0; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#ea4335'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ea4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <div>
@@ -198,7 +222,6 @@
             </div>
           </a>
 
-          <!-- WhatsApp -->
           <a href="https://wa.me/6282318911838?text=Halo%20Brian%20Dista%2C%20saya%20tertarik%20dengan%20profil%20Anda" target="_blank" rel="noopener" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: #e2e8f0; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#25D366'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             <div>
@@ -207,7 +230,6 @@
             </div>
           </a>
 
-          <!-- Telegram -->
           <a href="https://t.me/6282318911838" target="_blank" rel="noopener" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: #e2e8f0; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#0088cc'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0088cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             <div>
@@ -216,7 +238,6 @@
             </div>
           </a>
 
-          <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/brian-dista-setya-budi" target="_blank" rel="noopener" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: #e2e8f0; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#0077b5'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0077b5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             <div>
@@ -225,7 +246,6 @@
             </div>
           </a>
 
-          <!-- Instagram -->
           <a href="https://instagram.com/_brian_distaa24" target="_blank" rel="noopener" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: #e2e8f0; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#E1306C'; this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(0)';">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             <div>
@@ -238,7 +258,7 @@
       </div>
     </main>
 
-  </div> <!-- Penutup dari div.layout -->
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -45,6 +45,7 @@ a {
 .layout {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -61,6 +62,8 @@ a {
   flex-shrink: 0;
   position: relative;
   z-index: 10;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 /* Avatar */
@@ -186,14 +189,14 @@ a {
 }
 
 /* ============================================================
-   MAIN / HERO
+   MAIN / CONTENT SECTIONS (BASE)
    ============================================================ */
 .main {
   flex: 1;
   position: relative;
-  overflow: hidden;
-  /* Tambahkan baris di bawah ini */
-  background-image: linear-gradient(to right, rgba(13, 13, 15, 0.95), rgba(13, 13, 15, 0.7)), url('foto2.jpg');  background-size: cover;
+  height: 100vh;
+  background-image: linear-gradient(to right, rgba(13, 13, 15, 0.95), rgba(13, 13, 15, 0.7)), url('foto2.jpg');  
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -232,45 +235,6 @@ a {
   left: 200px;
 }
 
-/* ── Tech badges ── */
-.tech-strip {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 1;
-  opacity: 0;
-  animation: fadeUp 0.7s ease 0.9s forwards;
-}
-
-.tech-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 11.5px;
-  color: var(--muted);
-  font-weight: 400;
-  transition: border-color var(--transition), color var(--transition);
-}
-
-.tech-badge:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  color: var(--text);
-}
-
-.tech-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
 /* ── Hero content ── */
 .hero {
   position: relative;
@@ -279,28 +243,28 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5rem;
+  padding: 0 5rem; /* Padding vertikal dihilangkan agar elemen otomatis rata tengah sempurna */
 }
 
 .hero-label {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--accent2);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.2s forwards;
 }
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(42px, 5.5vw, 72px);
+  font-size: clamp(36px, 4.8vw, 64px); 
   font-weight: 700;
   line-height: 1.0;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.35s forwards;
 }
@@ -313,10 +277,10 @@ a {
 }
 
 .hero-typewriter {
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(15px, 1.8vw, 20px);
   color: var(--muted);
-  margin-bottom: 2rem;
-  height: 32px;
+  margin-bottom: 1.2rem;
+  height: 28px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -345,11 +309,11 @@ a {
 }
 
 .hero-desc {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--muted);
   max-width: 480px;
-  line-height: 1.9;
-  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
   font-weight: 300;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.65s forwards;
@@ -366,9 +330,9 @@ a {
 
 .btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: 10px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
   font-family: var(--font-body);
   letter-spacing: 0.3px;
@@ -401,13 +365,13 @@ a {
 
 /* ── Stats bar ── */
 .stats-row {
-  position: absolute;
-  bottom: 3rem;
-  left: 5rem;
+  position: absolute;  /* Membuatnya mengambang terlepas dari hero */
+  bottom: 2.5rem;      /* Ditempelkan 2.5rem dari batas paling bawah layar */
+  left: 5rem;          /* Sejajar dengan hero padding */
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
   opacity: 0;
   animation: fadeUp 0.7s ease 1s forwards;
 }
@@ -419,21 +383,21 @@ a {
 
 .stat-num {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--text);
   line-height: 1;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   letter-spacing: 1px;
 }
 
 .stat-plus {
   color: var(--accent);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .stat-label {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--muted);
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -441,7 +405,7 @@ a {
 
 .stat-divider {
   width: 1px;
-  height: 36px;
+  height: 30px;
   background: var(--border);
 }
 
@@ -476,6 +440,7 @@ a {
     flex-direction: column;
     height: auto;
     min-height: 100vh;
+    overflow: auto;
   }
 
   .sidebar {
@@ -487,6 +452,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    height: auto;
   }
 
   .sidebar-top {
@@ -508,6 +474,7 @@ a {
 
   .main {
     overflow: auto;
+    height: auto;
   }
 
   .hero {
@@ -517,20 +484,17 @@ a {
     justify-content: center;
   }
 
-  .tech-strip {
-    position: static;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1rem 2rem 0;
+  .stats-row {
+    position: static; /* Mengembalikan posisinya jika dibuka di HP agar bisa di-scroll */
+    margin-top: 2rem;
+    padding-bottom: 2rem;
     animation: none;
     opacity: 1;
   }
 
-  .stats-row {
-    position: static;
-    padding: 2rem;
-    animation: none;
-    opacity: 1;
+  #home {
+    overflow-y: auto !important;
+    height: auto;
   }
 
   .bg-glow--1,
@@ -538,35 +502,47 @@ a {
     display: none;
   }
 }
+
 /* ============================================================
-   ABOUT SECTION (REVISED)
+   PENGATURAN HALAMAN HOME (Terkunci / Tidak Bisa Di-scroll di Desktop)
    ============================================================ */
-#about {
-  /* Mempertahankan background gambar dari .main, tapi kita akan memberikan pelapis */
-  overflow-y: auto;
+#home {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+/* ============================================================
+   PENGATURAN HALAMAN ABOUT, PROJECT, & CONTACT (Bisa Di-scroll)
+   ============================================================ */
+#about, #project, #contact {
+  overflow-y: auto !important;
   padding: 5rem 6rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  height: 100vh;
 }
 
 .about-container {
+  width: 100%;
   max-width: 900px;
-  background: rgba(15, 15, 18, 0.85); /* Efek glass gelap */
-  backdrop-filter: blur(12px); /* Efek blur di belakang kotak */
+  background: rgba(15, 15, 18, 0.85); 
+  backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 4rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  animation: fadeUp 0.6s ease forwards; /* Efek muncul perlahan */
+  animation: fadeUp 0.6s ease forwards; 
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .about-container h2 {
   font-family: var(--font-display);
   font-size: 42px;
   color: var(--text);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -592,7 +568,7 @@ a {
 }
 
 .about-container p {
-  font-size: 16.5px; /* Diperbesar agar nyaman dibaca */
+  font-size: 16.5px; 
   line-height: 1.9;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1.5rem;
@@ -608,16 +584,17 @@ a {
   border-left: 4px solid var(--accent);
   padding: 1.5rem 2rem;
   border-radius: 0 8px 8px 0;
-  margin-bottom: 3rem !important;
+  margin-bottom: 2rem !important;
   line-height: 1.8;
 }
 
 @media (max-width: 992px) {
-  #about {
-    padding: 3rem 2rem;
+  #about, #project, #contact {
+    padding: 3rem 1.5rem;
+    height: auto;
   }
   .about-container {
-    padding: 2.5rem;
+    padding: 2rem;
   }
   .about-container h2 {
     font-size: 32px;

@@ -594,12 +594,25 @@ a {
     height: auto;
   }
   .about-container {
-    padding: 2rem;
+    padding: 1.5rem; /* Padding dikurangi agar tidak terlalu sesak di layar kecil */
   }
   .about-container h2 {
-    font-size: 32px;
+    font-size: 28px; /* Ukuran judul diperkecil */
+  }
+  .about-container h3 {
+    font-size: 22px;
   }
   .about-container p {
-    font-size: 15px;
+    font-size: 14px; /* Ukuran paragraf biasa diperkecil */
+    line-height: 1.7;
+    text-align: left;
+  }
+  
+  /* Ini adalah kunci agar kotak kutipan mengecil di HP */
+  .about-lead {
+    font-size: 14.5px !important; 
+    padding: 1.2rem 1.5rem; 
+    margin-bottom: 1.5rem !important;
+    line-height: 1.7;
   }
 }

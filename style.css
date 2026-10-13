@@ -243,7 +243,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5rem; /* Padding vertikal dihilangkan agar elemen otomatis rata tengah sempurna */
+  padding: 0 5rem;
 }
 
 .hero-label {
@@ -365,9 +365,9 @@ a {
 
 /* ── Stats bar ── */
 .stats-row {
-  position: absolute;  /* Membuatnya mengambang terlepas dari hero */
-  bottom: 2.5rem;      /* Ditempelkan 2.5rem dari batas paling bawah layar */
-  left: 5rem;          /* Sejajar dengan hero padding */
+  position: absolute;
+  bottom: 2.5rem;
+  left: 5rem;
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -485,7 +485,7 @@ a {
   }
 
   .stats-row {
-    position: static; /* Mengembalikan posisinya jika dibuka di HP agar bisa di-scroll */
+    position: static;
     margin-top: 2rem;
     padding-bottom: 2rem;
     animation: none;
@@ -504,7 +504,7 @@ a {
 }
 
 /* ============================================================
-   PENGATURAN HALAMAN HOME (Terkunci / Tidak Bisa Di-scroll di Desktop)
+   PENGATURAN HALAMAN HOME
    ============================================================ */
 #home {
   overflow: hidden !important;
@@ -512,7 +512,7 @@ a {
 }
 
 /* ============================================================
-   PENGATURAN HALAMAN ABOUT, PROJECT, & CONTACT (Bisa Di-scroll)
+   PENGATURAN HALAMAN ABOUT, PROJECT, & CONTACT
    ============================================================ */
 #about, #project, #contact {
   overflow-y: auto !important;
@@ -594,25 +594,70 @@ a {
     height: auto;
   }
   .about-container {
-    padding: 1.5rem; /* Padding dikurangi agar tidak terlalu sesak di layar kecil */
+    padding: 1.5rem;
   }
   .about-container h2 {
-    font-size: 28px; /* Ukuran judul diperkecil */
+    font-size: 28px;
   }
   .about-container h3 {
     font-size: 22px;
   }
   .about-container p {
-    font-size: 14px; /* Ukuran paragraf biasa diperkecil */
+    font-size: 14px;
     line-height: 1.7;
     text-align: left;
   }
   
-  /* Ini adalah kunci agar kotak kutipan mengecil di HP */
   .about-lead {
     font-size: 14.5px !important; 
     padding: 1.2rem 1.5rem; 
     margin-bottom: 1.5rem !important;
     line-height: 1.7;
   }
+}
+
+/* ============================================================
+   PROJECT SUB-TABS (UPDATED)
+   ============================================================ */
+.project-tabs {
+  display: flex;
+  justify-content: center; /* Ini yang membuat posisinya di tengah */
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0;
+  flex-wrap: wrap; 
+}
+
+.tab-btn {
+  background: transparent; /* Menghilangkan kotak putih bawaan browser */
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  padding: 10px 20px;
+  font-family: var(--font-display); /* Menggunakan font Rajdhani agar lebih techy */
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Membuat tulisan menjadi kapital semua */
+  cursor: pointer;
+  transition: all var(--transition);
+  outline: none;
+}
+
+.tab-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03); /* Sedikit efek nyala saat di-hover */
+  border-radius: 8px 8px 0 0;
+}
+
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+  background: rgba(79, 142, 247, 0.08); /* Background biru tipis untuk tab aktif */
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card {
+  animation: fadeUp 0.4s ease forwards;
 }

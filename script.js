@@ -82,3 +82,27 @@ navItems.forEach(item => {
     });
   });
 });
+
+/* ── Project Sub-Tab Logic (NEW) ── */
+const tabBtns = document.querySelectorAll('.tab-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // 1. Reset semua status tab
+    tabBtns.forEach(b => b.classList.remove('active'));
+    // 2. Beri class 'active' ke tab yang sedang diklik
+    btn.classList.add('active');
+
+    const targetTab = btn.getAttribute('data-tab');
+
+    // 3. Sembunyikan atau tampilkan konten project yang sesuai
+    projectCards.forEach(card => {
+      if (card.getAttribute('data-category') === targetTab) {
+        card.style.display = 'block'; // Tampilkan card kategori ini
+      } else {
+        card.style.display = 'none'; // Sembunyikan card kategori lain
+      }
+    });
+  });
+});

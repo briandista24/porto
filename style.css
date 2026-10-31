@@ -310,7 +310,7 @@ a {
 
 .hero-desc {
   font-size: 13.5px;
-  color: var(--muted);
+  color: #ffffff !important;
   max-width: 480px;
   line-height: 1.7;
   margin-bottom: 1.5rem;
